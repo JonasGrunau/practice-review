@@ -6,13 +6,7 @@ import { useEffect, useState } from 'react';
 import { toast } from 'sonner';
 import LoadingSpinner from '@/components/loading-spinner';
 import ReviewCard from '@/components/review-card';
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from '@/components/ui/select';
+import FilterBar from '@/components/filter-bar';
 
 export default function Dashboard() {
   const [unreadReadFilter, setUnreadReadFilter] = useState('unread');
@@ -89,29 +83,12 @@ export default function Dashboard() {
     <div className="pt-8 pb-24 px-8 overflow-scroll h-screen flex flex-col items-center">
       <div className="flex flex-col items-center w-full">
         <div className="flex justify-end gap-4 max-w-[650px] w-full">
-          <Select
-            value={orderByFilter}
-            onValueChange={handleOrderByFilterChange}>
-            <SelectTrigger className="w-[180px] mb-8 self-end">
-              <SelectValue />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="asc">Älteste zuerst</SelectItem>
-              <SelectItem value="desc">Neueste zuerst</SelectItem>
-            </SelectContent>
-          </Select>
-
-          <Select
-            value={unreadReadFilter}
-            onValueChange={handleUnreadReadFilterChange}>
-            <SelectTrigger className="w-[180px] mb-8 self-end">
-              <SelectValue />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="unread">Ungelesen</SelectItem>
-              <SelectItem value="read">Gelesen</SelectItem>
-            </SelectContent>
-          </Select>
+          <FilterBar
+            orderByFilterValue={orderByFilter}
+            unreadReadFilterValue={unreadReadFilter}
+            onOrderByFilterChange={handleOrderByFilterChange}
+            onUnreadReadFilterChange={handleUnreadReadFilterChange}
+          />
         </div>
 
         <ul className="flex items-center flex-col gap-8 w-full max-w-[650px]">
@@ -127,7 +104,7 @@ export default function Dashboard() {
               <li className="w-full" key={review.id}>
                 <ReviewCard
                   review={review}
-                  onMarkAsReadClick={handleMarkAsUnreadReadClick}
+                  onMarkAsReadUnreadClick={handleMarkAsUnreadReadClick}
                 />
               </li>
             ))}

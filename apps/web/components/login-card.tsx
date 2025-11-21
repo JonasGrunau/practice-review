@@ -24,7 +24,7 @@ import {
 
 const formSchema = z.object({
   email: z.email('Ungültige E-Mail-Adresse.'),
-  password: z.string().min(8, 'Passwort muss mindestens 8 Zeichen lang sein.'),
+  password: z.string(),
 });
 
 export function LoginCard() {

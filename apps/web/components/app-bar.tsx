@@ -22,7 +22,7 @@ export default function AppBar() {
 
   return (
     <header className="flex h-16 shrink-0 justify-between items-center border-b px-4">
-      <span>Praxis Reviews</span>
+      <span>Praxis Feedback</span>
       <div className="flex gap-2">
         <ThemeToggle className="" />
         <Button variant="outline" onClick={handleLoginLogoutClick}>

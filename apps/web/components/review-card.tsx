@@ -12,10 +12,10 @@ import { Review } from '@prisma/client';
 
 export default function ReviewCard({
   review,
-  onMarkAsReadClick,
+  onMarkAsReadUnreadClick: onMarkAsReadUnreadClick,
 }: {
   review: Review;
-  onMarkAsReadClick: (review: Review) => void;
+  onMarkAsReadUnreadClick: (review: Review) => void;
 }) {
   return (
     <Card className="flex">
@@ -24,7 +24,7 @@ export default function ReviewCard({
           <CardTitle className="text-xl">{review.title}</CardTitle>
           <div className="flex items-center gap-1.5">
             <span className="font-bold">{review.rating}/5</span>
-            <Star className="fill-amber-400" strokeWidth={0} />
+            <Star className=" w-5 h-5 fill-amber-400 text-amber-400" />
           </div>
         </div>
         <CardDescription>
@@ -37,7 +37,9 @@ export default function ReviewCard({
       </CardContent>
 
       <CardFooter className="justify-end">
-        <Button variant="outline" onClick={() => onMarkAsReadClick(review)}>
+        <Button
+          variant="outline"
+          onClick={() => onMarkAsReadUnreadClick(review)}>
           {review.isRead ? (
             <>
               <ArrowUpLeft /> Als ungelesen markieren
