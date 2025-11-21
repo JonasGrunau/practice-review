@@ -2,7 +2,7 @@
 
 ## 🎨 Design Decisions
 
-### Repo
+### Repository
 
 I went with a mono repo to have as little duplicate code as possible.
 
