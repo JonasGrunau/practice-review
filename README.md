@@ -8,7 +8,7 @@ I went with a mono repo to have as little duplicate code as possible.
 
 ### Typing
 
-To keep all my communication type safe and ensure that I don't have to fiddle with SQL I decided to use Prisma. We define our schema in the packages and prisma generates us all types and an ORM. We can now use them across both apps, frontend and backend. This beautifully handles all issues regarding duplication and makes our live a lot easier.
+To keep all my communication type safe and ensure that I don't have to fiddle with SQL I decided to use Prisma. We define our schema in the packages and prisma generates us all types. We can now use them across both apps, frontend and backend. This beautifully handles all issues regarding duplication and makes our live a lot easier.
 
 ### Database
 
