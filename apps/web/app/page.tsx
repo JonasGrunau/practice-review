@@ -6,6 +6,9 @@ import { Controller, useForm } from 'react-hook-form';
 import { toast } from 'sonner';
 import * as z from 'zod';
 import { Button } from '@/components/ui/button';
+import { Check } from 'lucide-react';
+import StarRating from '@/components/star-rating';
+import { API_URL } from './constants';
 import {
   Card,
   CardContent,
@@ -27,9 +30,6 @@ import {
   InputGroupText,
   InputGroupTextarea,
 } from '@/components/ui/input-group';
-import { Check } from 'lucide-react';
-import StarRating from '@/components/star-rating';
-import { API_URL } from './constants';
 
 const formSchema = z.object({
   title: z
