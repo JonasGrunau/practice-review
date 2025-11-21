@@ -16,7 +16,7 @@ The database is a SQLite-File to keep it simple for this challenge but still hav
 
 ### Backend
 
-I wanted to go with a NextJS Backend at first but thought that would be kind of lame. I decided to try out NestJS und went with that.
+I wanted to go with a NextJS Backend at first but thought that would be kind of lame. I decided to try out NestJS und went with that. I implemented all api calls inside a single controller for simplicity.
 
 ### Frontend
 
