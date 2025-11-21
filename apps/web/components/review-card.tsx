@@ -21,7 +21,7 @@ export default function ReviewCard({
     <Card className="flex">
       <CardHeader className="flex flex-col gap-1 items-stretch">
         <div className="flex flex-row items-center justify-between">
-          <CardTitle className="text-2xl">{review.title}</CardTitle>
+          <CardTitle className="text-xl">{review.title}</CardTitle>
           <div className="flex items-center gap-1.5">
             <span className="font-bold">{review.rating}/5</span>
             <Star className="fill-amber-400" strokeWidth={0} />
