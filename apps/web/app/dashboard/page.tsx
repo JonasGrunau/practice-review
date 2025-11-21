@@ -118,7 +118,7 @@ export default function Dashboard() {
           {reviews && reviews.length === 0 && (
             <div className="flex justify-center w-[650px] p-16">
               <span className="text-muted-foreground">
-                Keine Bewertungen gefunden...
+                Kein Feedback gefunden...
               </span>
             </div>
           )}

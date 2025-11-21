@@ -35,7 +35,7 @@ export function LoginCard() {
     resolver: zodResolver(formSchema),
     mode: 'onChange',
     defaultValues: {
-      email: 'test@test.com',
+      email: 'max-mustermann@test.com',
       password: 'ultraSecurePassword',
     },
   });
