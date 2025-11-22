@@ -4,7 +4,7 @@
 
 ### Repository
 
-I went with a mono repo to have as little duplicate code as possible.
+I went with a mono repo to have as little duplicate code as possible and manage all code in one place.
 
 ### Typing
 
