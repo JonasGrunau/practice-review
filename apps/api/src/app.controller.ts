@@ -62,11 +62,14 @@ export class AppController {
     });
   }
 
-  @Put('review/:id/mark-as-read')
-  async updateReview(@Param('id') id: number, @Body('isRead') isRead: boolean) {
+  @Put('review/:id')
+  async updateReview(
+    @Param('id') id: number,
+    @Body() putData: Partial<Review>,
+  ) {
     return await this.reviewService.updateReview({
       where: { id: Number(id) },
-      data: { isRead: isRead },
+      data: putData,
     });
   }
 

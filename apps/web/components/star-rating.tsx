@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { Star } from 'lucide-react';
 import { motion } from 'motion/react';
-import { useTheme } from 'next-themes';
 
 export default function StarRating({
   value,
@@ -11,18 +10,14 @@ export default function StarRating({
   onChange: (value: number) => void;
 }) {
   const [hovered, setHovered] = useState(0);
-  const { theme } = useTheme();
+
+  const filledColor = 'fill-amber-400 text-amber-400';
+  const unfilledColor = 'text-zinc-300 dark:text-zinc-700';
 
   return (
     <div className="flex gap-1 items-center">
       {Array.from({ length: 5 }, (_, i) => i + 1).map((rating) => {
         const filled = hovered >= rating || (!hovered && value >= rating);
-
-        const color = filled
-          ? 'fill-amber-400 text-amber-400'
-          : theme === 'dark'
-            ? 'text-zinc-800'
-            : 'text-zinc-300';
 
         return (
           <motion.button
@@ -35,11 +30,11 @@ export default function StarRating({
             onClick={() => onChange(rating)}
             className="p-1 cursor-pointer transition-transform">
             <motion.div
-              animate={{
-                scale: filled ? 1.2 : 1,
-              }}
+              animate={{ scale: filled ? 1.2 : 1 }}
               transition={{ type: 'spring', stiffness: 300, damping: 15 }}>
-              <Star className={`w-6 h-6 transition-colors ${color}`} />
+              <Star
+                className={`w-6 h-6 transition-colors ${filled ? filledColor : unfilledColor}`}
+              />
             </motion.div>
           </motion.button>
         );

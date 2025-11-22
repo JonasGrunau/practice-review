@@ -50,7 +50,7 @@ export default function Dashboard() {
   }
 
   async function handleMarkAsUnreadReadClick(review: Review) {
-    const result = await fetch(`${API_URL}/review/${review.id}/mark-as-read`, {
+    const result = await fetch(`${API_URL}/review/${review.id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
