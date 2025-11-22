@@ -22,7 +22,7 @@ I wanted to go with a NextJS Backend at first but thought that would be kind of 
 
 My frontend is a simple NextJS Frontend with some shadcn components and tailwind for styling. I wanted to create a real login at first but realized this would have gone way beyond the scope of this challenge, so I faked it for now. The features that I implemented include:
 
-- User can submit review with rating, title and content
+- User can submit a review with rating, title and content
 - Administrator can "login" and see all reviews
 - Reviews can be filtered based on if they are read or not
 - Reviews can be sorted by creation date
