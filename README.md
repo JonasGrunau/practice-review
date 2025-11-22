@@ -4,27 +4,27 @@
 
 ### Repository
 
-I went with a mono repo to have as little duplicate code as possible and manage all code in one place.
+I chose a monorepo to reduce code duplication as much as possible and to keep all code centralized in one place.
 
 ### Typing
 
-To keep all my communication type safe and ensure that I don't have to fiddle with SQL I decided to use Prisma. We define our schema once as a package and prisma generates us all types and an ORM. Because we decided for a mono repo, we can now use our types across both apps, frontend and backend. This beautifully handles all issues regarding duplication and makes our life a lot easier.
+To keep all my communication type-safe and ensure that I don’t have to fiddle with SQL, I decided to use Prisma. We define our schema once in a shared package, and Prisma generates all the types and an ORM for us. Because we opted for a monorepo, we can now use these types across both apps, frontend and backend. This elegantly avoids duplication issues and makes our lives a lot easier.
 
 ### Database
 
-The database is a SQLite-File to keep it simple for this challenge but still have something that i can query.
+The database is a SQLite file to keep the setup simple for this challenge while still providing a queryable data source.
 
 ### Backend
 
-I wanted to go with a NextJS Backend at first but thought that would be kind of lame. I decided to try out NestJS und went with that. I implemented all api calls inside a single controller for simplicity.
+I wanted to go with a NextJS backend at first but thought that would be kind of lame. I decided to try out NestJS and went with that. I implemented all API calls inside a single controller for simplicity.
 
 ### Frontend
 
-My frontend is a simple NextJS Frontend with some shadcn components and tailwind for styling. I wanted to create a real login at first but realized this would have gone way beyond the scope of this challenge, so I faked it for now. The features that I implemented include:
+My frontend is a simple Next.js application that uses some shadcn components and Tailwind for styling. Initially, I wanted to implement a real login, but I realized that this would go far beyond the scope of this challenge, so I opted to fake it for now. The features I implemented include:
 
-- User can submit a review with rating, title and content
-- Administrator can "login" and see all reviews
-- Reviews can be filtered based on if they are read or not
+- Users can submit a review with a rating, title, and content
+- Administrators can “log in” and view all reviews
+- Reviews can be filtered based on whether they have been read or not
 - Reviews can be sorted by creation date
 - Reviews can be marked as read or unread
 
@@ -36,7 +36,7 @@ Install all required packages:
 npm install
 ```
 
-Generate the prisma client and all types from the schema:
+Generate the Prisma client and all types from the schema:
 
 ```bash
 npm run generate
